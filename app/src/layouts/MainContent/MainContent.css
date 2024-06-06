@@ -1,0 +1,41 @@
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .castle-container {
+    position: relative;
+    margin-top: 20px;
+  }
+  
+  .castle-image {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .link-window, .link-door {
+    position: absolute;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .link-page1 {
+    top: 20%;
+    left: 30%;
+  }
+  
+
+  
+  .link-window:hover, .link-door:hover {
+    transform: scale(1.1);
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
