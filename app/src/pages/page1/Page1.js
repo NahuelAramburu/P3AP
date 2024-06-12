@@ -1,13 +1,13 @@
-import Header from "../../components/Header/Header";
-import Navbar from "../../components/Navbar/Navbar";
-import Carrousel from "../../components/Carrousel/Carrousel";
+
+
+import React from 'react';
+import Page1Image from '../../assets/images/pag1.jpeg';
+import './page1.css'; 
 
 const Page1 = () => {
   return (
-    <div>
-      <Header />
-      <Navbar />
-      <Carrousel />
+    <div className="page-content" style={{ backgroundImage: `url(${Page1Image})`, backgroundPosition: 'center' }}>
+     
     </div>
   );
 };
