@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Page2Image from '../../assets/images/pag2.jpeg';
+import './Page2.css';
 
-function Page2() {
+const Page2 = () => {
   return (
-    <div>Page2</div>
-  )
-}
+    <div className="page-content" style={{ backgroundImage: `url(${Page2Image})`, backgroundPosition: 'center' }}>
+    
+    </div>
+  );
+};
 
-export default Page2
+export default Page2;
