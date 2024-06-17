@@ -4,6 +4,47 @@
   background-size: cover;
   background-position: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: white;
+}
+
+.titulo{
+  font-size: 60px;
+  position: fixed;
+  top: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(146, 138, 119, 0.75);
+  border-radius: 10px;
+  border: 7px solid rgba(138, 116, 68, 0.918);
+  box-shadow: black 1px 1px 15px;
+  text-align: center;
+}
+
+.text-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  height: 50%;
+  width: 50%;
+  background-color: rgba(146, 138, 119, 0.75);
+  border: 7px solid rgba(138, 116, 68, 0.918);
+  border-radius: 20px;
+  box-shadow: black 1px 1px 15px;
+}
+
+.texto{
+  margin: 25px;
+  flex: 1;
+}
+
+.imagent{
+  width: 200px;
+  height: 300px;
+  border: 5px solid black;
+  flex: 0;
+  margin-right: 25px;
+  border-radius: 15px;
 }
