@@ -40,11 +40,25 @@
   flex: 1;
 }
 
-.imagent{
+.frame-container {
+  position: relative;
+  width: 275px;
+  height: 375px;
+}
+
+.marco {
+  width: 275px;
+  height: 375px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.pintura{
   width: 200px;
   height: 300px;
-  border: 5px solid black;
-  flex: 0;
-  margin-right: 25px;
-  border-radius: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
 }
