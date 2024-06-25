@@ -1,18 +1,19 @@
 .door {
-  background-image: url("../../assets/images/door2.jpeg");
+  background-image: url("../../assets/images/video.mp4");
   opacity: 1;
-  transition: opacity 2s ease-in-out;
+  transition: opacity 5s ease-in-out;
   width: 100%;
   height: 100%;
   background-size: cover;
   background-position: center;
   position: absolute;
   z-index: 9999;
+  overflow: hidden; 
 }
 
 .door.fade-out {
   opacity: 0;
-  animation: fadeOut 2s forwards, zoomOut 2s forwards;
+  animation: fadeOut 5s forwards, zoomOut 5s forwards;
 }
 
 @keyframes fadeOut {
@@ -37,26 +38,8 @@
   }
 }
 
-
-/* Responsive */
 @media (max-width: 600px) {
   .door {
     background-size: 100% 100%;
-  }
-}
-
-
-@media (min-width: 601px) and (max-width: 1024px) {
-  .door {
-    background-size: cover;
-    height: 100vh;
-  }
-}
-
-
-@media (min-width: 1025px) {
-  .door {
-    background-size: cover;
-    height: 100vh;
   }
 }
