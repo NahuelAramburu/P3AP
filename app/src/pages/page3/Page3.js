@@ -1,11 +1,17 @@
 import React from 'react';
-import Page3Image from '../../assets/images/pag3.jpeg';
-import './Page3.css'; 
+import { Link } from 'react-router-dom';
+import cartel from '../../assets/images/back.png';
+import './Page3.css';
+import Carousel from '../../components/Carousel/Carousel';
 
 const Page3 = () => {
   return (
-    <div className="page-content" style={{ backgroundImage: `url(${Page3Image})`, backgroundPosition: 'center' }}>
-
+    <div className="content-page">
+      <Link to="/">
+        <img src={cartel} className="cartel-image" alt="Cartel" />
+      </Link>
+      <div className="frame-container-marco"></div>
+      <Carousel />
     </div>
   );
 };
