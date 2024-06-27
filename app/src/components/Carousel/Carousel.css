@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
+:root {
+  --color-dark: #170e08;
+  --color-brown: #524335;
+  --color-gold: #ddb669;
+  --color-cream: #f6f1d8;
+}
+
+body {
+  font-family: "MedievalSharp", sans-serif;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+}
+
+.art-description {
+  max-width: 300px;
+  margin-right: 20px;
+  color: var(--color-cream);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.art-description h2 {
+  font-size: 30px;
+  margin-bottom: 10px;
+  animation: fade-in 1s ease-in-out;
+}
+
+.art-description p {
+  font-size: 1.2em;
+  margin: 5px 0;
+  animation: fade-in 1.5s ease-in-out;
+}
+
+.slider {
+  flex-grow: 1;
+  max-width: 600px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.slide {
+  display: none;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide.active {
+  display: block;
+  animation: slide-in 0.5s ease-in-out forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.image-container {
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  display: block;
+}
+
+.left-arrow,
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 10;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0);
+  color: var(--color-gold);
+  font-size: 45px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow {
+  left: 400px;
+}
+
+.right-arrow {
+  right: 400px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  text-align: center;
+}
+
+.popup p {
+  margin-bottom: 10px;
+}
+
+.popup button {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.popup button:hover {
+  background-color: #cda256;
+}
+
