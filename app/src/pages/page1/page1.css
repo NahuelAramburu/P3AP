@@ -11,7 +11,7 @@
 }
 
 .titulo{
-  font-size: 60px;
+  font-size: 55px;
   position: fixed;
   top: 0;
   font-family: 'Courier New', Courier, monospace;
@@ -22,43 +22,31 @@
   text-align: center;
 }
 
-.text-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 25px;
-  height: 50%;
-  width: 50%;
-  background-color: rgba(146, 138, 119, 0.75);
-  border: 7px solid rgba(138, 116, 68, 0.918);
-  border-radius: 20px;
-  box-shadow: black 1px 1px 15px;
-}
-
-.texto{
-  margin: 25px;
-  flex: 1;
-}
-
-.frame-container {
-  position: relative;
-  width: 275px;
-  height: 375px;
-}
-
-.marco {
-  width: 275px;
-  height: 375px;
-  position: absolute;
-  object-fit: cover;
-}
-
-.pintura{
-  width: 200px;
-  height: 300px;
+.frame{
   position: absolute;
   top: 50%;
   left: 50%;
-  object-fit: cover;
+  width: 75%; 
+  height: 80%; 
+  background: url('../../assets/images/frame1.png') no-repeat center;
+  background-size: contain;
+  transform: translate(-50%, -50%); 
+  z-index: 0;
+}
+
+.text{
+  position: absolute;
+  background-color: #170e08;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 69%;
   transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text p{
+  margin-top: 20%;
+  font-size: 30px;
+  padding: 15px;
 }
