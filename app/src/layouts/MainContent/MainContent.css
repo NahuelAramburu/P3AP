@@ -1,3 +1,9 @@
+:root {
+  --color-dark: #170e08;
+  --color-brown: #524335;
+  --color-gold: #ddb669;
+  --color-cream: #f6f1d8;
+}
 
 .main-content {
   position: relative;
@@ -16,14 +22,25 @@
 .navigation-links-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto); 
+  gap: 20px; 
   justify-items: center;
   width: 30%;
   padding-bottom: 190px;
 }
 
+.navigation-link.salida-custom-position {
+  grid-row: 3; 
+  grid-column: 1 / span 2; 
+  justify-self: center; 
+  position: relative; 
+  top: 0; 
+  right: 0;
+  bottom: 0; 
+}
+
 .navigation-link {
-  padding: 20px 30px;
+  padding: 10px 20px;
   text-decoration: none;
   font-size: 30px;
   display: flex;
@@ -32,51 +49,23 @@
   color: white;
 }
 
-.obras-link {
-  margin-top: -90px; 
-  margin-right: 30px;
+.navigation-link:hover {
+  color: #EFEFEF; 
+  transform: scale(1.05); 
+  transition: all 0.3s ease;
 }
 
-.exclusiva-link {
-  margin-top: -90px; 
-  margin-left: 20px;
-}
 
 .navigation-link img {
   width: 200px; 
   height: auto; 
 }
 
-.image-hover-container {
-  position: relative;
-  display: inline-block;
-}
-
-.image-hover-container img {
-  transition: transform 0.2s ease;
-}
-
-.image-hover-container:hover img {
-  transform: scale(1.1);
-}
-
-.hover-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  font-size: 20px;
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
 
 .image-hover-container:hover .hover-text {
   visibility: visible;
   opacity: 1;
 }
-
 
 .navigation-links-container {
   position: relative;
@@ -86,7 +75,7 @@
   position: absolute;
   top: 80px; 
   right: 200px; 
-  bottom: -500px;
+  bottom: auto; 
 }
 
 @media (max-width: 768px) {
@@ -103,6 +92,9 @@
     width: 80%;
     padding: 20px 0;
     text-align: center;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(5, auto);
+    gap: 20px; 
   }
   .navigation-link {
     padding: 20px 30px;
@@ -112,42 +104,11 @@
     align-items: center;
     justify-content: center;
     color: white;
-    position: fixed;
-    transform: translateX(-50%);
+    position: relative;
+    transform: none; 
   }
 
-
-  /* Artista */
-  .navigation-links-container .navigation-link:nth-child(1) {
-    bottom: 415px; 
-    left: 24.5%; 
-  }
-
-  /* Historia */
-  .navigation-links-container .navigation-link:nth-child(2) {
-    bottom: 415px;
-    left: 75%; 
-  }
-
-  /* Obras */
-  .navigation-links-container .navigation-link:nth-child(3) {
-    bottom: 295px;
-    left: 23.5%; 
-  }
-
-  /* Exclusiva */
-  .navigation-links-container .navigation-link:nth-child(4) {
-    bottom: 295px;
-    left: 71%; 
-  }
-
-  /* Salida */
-  .navigation-links-container .navigation-link:nth-child(5) {
-    bottom: -320px;
-    left: 45%; 
-  }
-
-
+  
   .navigation-link img {
     width: 118px;
     height: auto;
