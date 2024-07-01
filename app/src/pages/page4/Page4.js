@@ -1,22 +1,8 @@
-// import React from 'react';
-// import Page4Image from '../../assets/images/pag4.jpeg';
-// import './Page4.css'; 
-// import Carousel from '../../components/Carousel/Carousel';
-
-// const Page4 = () => {
-//   return (
-//     <div className="page-content" style={{ backgroundImage: `url(${Page4Image})`, backgroundPosition: 'center' }}>
-//       <Carousel />
-//     </div>
-//   );
-// };
-
-// export default Page4;
-
-
 import React, { useState } from 'react';
 import Page4Image from '../../assets/images/pag4.jpeg';
+import { Link } from 'react-router-dom';
 import './Page4.css'; 
+import cartel from '../../assets/images/back.png';
 import Carousel from '../../components/Carousel/Carousel';
 
 const Page4 = () => {
@@ -41,8 +27,13 @@ const Page4 = () => {
         </div>
       )}
       {ageVerified && <Carousel />}
+      <Link to="/">
+        <img src={cartel} className="cartel-image" alt="Cartel" />
+      </Link>
     </div>
   );
+
+  
 };
 
 export default Page4;
