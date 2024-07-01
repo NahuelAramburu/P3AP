@@ -22,7 +22,7 @@ body {
 
 .art-description {
   max-width: 300px;
-  margin-right: 20px;
+  margin-left: 230px;
   color: var(--color-cream);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -30,13 +30,13 @@ body {
 }
 
 .art-description h2 {
-  font-size: 40px;
+  font-size: 30px;
   margin-bottom: 20px;
   animation: fade-in 1s ease-in-out;
 }
 
 .art-description p {
-  font-size: 30px;
+  font-size: 23px;
   margin: 5px 0;
   animation: fade-in 1.5s ease-in-out;
 }
@@ -73,19 +73,19 @@ body {
   }
 }
 
-.image {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
 .image-container {
   width: 80%;
   height: 80%;
   margin: auto;
   display: block;
 }
+.image {
+  max-width: 300px;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 
 .left-arrow,
 .right-arrow {

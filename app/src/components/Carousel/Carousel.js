@@ -5,7 +5,7 @@ import img2 from '../../assets/images/img2.jpg';
 import img3 from '../../assets/images/img3.jpg';
 import './Carousel.css';
 
-const artworks = [
+const obras = [
   {
     src: img1,
     alt: 'Obra de arte 1',
@@ -54,11 +54,11 @@ const Carousel = () => {
   const [currentImage, setCurrentImage] = useState('');
 
   const nextSlide = () => {
-    setCurrent(current === artworks.length - 1 ? 0 : current + 1);
+    setCurrent(current === obras.length - 1 ? 0 : current + 1);
   };
 
   const prevSlide = () => {
-    setCurrent(current === 0 ? artworks.length - 1 : current - 1);
+    setCurrent(current === 0 ? obras.length - 1 : current - 1);
   };
 
   const openModal = (imageSrc) => {
@@ -90,17 +90,17 @@ const Carousel = () => {
   return (
     <div className="carousel">
       <div className="art-description">
-        <h2>{artworks[current].nombre}</h2>
-        <p><strong>País:</strong> {artworks[current].pais}</p>
-        <p><strong>Temática:</strong> {artworks[current].tematica}</p>
-        <p><strong>Técnica y soportes:</strong> {artworks[current].tecnica}, {artworks[current].soportes}</p>
-        <p><strong>Medidas:</strong> {artworks[current].medidas}</p>
-        <p><strong>En Artelista desde:</strong> {artworks[current].enArtelistaDesde}</p>
-        <p><strong>Descripción:</strong> {artworks[current].descripcion}</p>
-        <p><strong>Precio: $</strong>{artworks[current].precio}</p>
+        <h2>{obras[current].nombre}</h2>
+        <p><strong>País:</strong> {obras[current].pais}</p>
+        <p><strong>Temática:</strong> {obras[current].tematica}</p>
+        <p><strong>Técnica y soportes:</strong> {obras[current].tecnica}, {obras[current].soportes}</p>
+        <p><strong>Medidas:</strong> {obras[current].medidas}</p>
+        <p><strong>En Artelista desde:</strong> {obras[current].enArtelistaDesde}</p>
+        <p><strong>Descripción:</strong> {obras[current].descripcion}</p>
+        <p><strong>Precio: $</strong>{obras[current].precio}</p>
       </div>
       <div className="slider">
-      {artworks.map((art, index) => (
+      {obras.map((art, index) => (
           <div className={index === current ? 'slide active' : 'slide'} key={index}>
             {index === current && (
               <div className="image-container" onClick={() => openModal(art.src)}>
