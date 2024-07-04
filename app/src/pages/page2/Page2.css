@@ -8,3 +8,31 @@
     justify-content: center;
   }
   
+  .texto{
+    margin: 25px;
+    flex: 1;
+  }
+  
+  .frame-container {
+    position: relative;
+    width: 275px;
+    height: 375px;
+  }
+  
+  .marco {
+    width: 275px;
+    height: 375px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .pintura{
+    width: 200px;
+    height: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+  }
+  
