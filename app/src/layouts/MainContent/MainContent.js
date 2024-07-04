@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import CastleImage from '../../assets/images/castle3.jpeg';
+import CastleImage from '../../assets/images/castle2.png';
 import Door from '../../components/Door/Door';
-import ventana from '../../assets/images/ventana.png';
-import salida from '../../assets/images/salida.png';
+import marco1 from '../../assets/images/1.png';
+import marco2 from '../../assets/images/3.png';
 import './MainContent.css';
 
 const MainContent = () => {
@@ -31,10 +31,10 @@ const MainContent = () => {
   }, [isDoorVisible, isContentVisible]);
 
   useEffect(() => {
-    if (location.pathname === '/') {
-      setIsDoorVisible(false);
-      setIsContentVisible(true);
-    }
+    // if (location.pathname === '/') {
+    //   setIsDoorVisible(false);
+    //   setIsContentVisible(true);
+    // }
   }, [location.pathname]);
 
   const handleDoorClose = () => {
@@ -59,34 +59,32 @@ const MainContent = () => {
         <div className={`navigation-links-container ${isContentVisible ? 'visible' : ''}`}>
           <Link to="/page1" className={`navigation-link ${activeLink === 'page1' ? 'zoom-out' : ''}`} onClick={() => handleClick('page1')}>
             <div className="image-hover-container">
-              <img src={ventana} alt="Artista" />
+              <img src={marco1} alt="Artista" />
               <span className="hover-text">Artista</span>
             </div>
           </Link>
           <Link to="/page2" className={`navigation-link ${activeLink === 'page2' ? 'zoom-out' : ''}`} onClick={() => handleClick('page2')}>
             <div className="image-hover-container">
-              <img src={ventana} alt="Historia" />
+              <img src={marco1} alt="Historia" />
               <span className="hover-text">Historia</span>
             </div>
           </Link>
           <Link to="/page3" className={`navigation-link ${activeLink === 'page3' ? 'zoom-out' : ''} obras-link`} onClick={() => handleClick('page3')}>
             <div className="image-hover-container">
-              <img src={ventana} alt="Obras" />
+              <img src={marco2} alt="Obras" />
               <span className="hover-text">Obras</span>
             </div>
           </Link>
           <Link to="/page4" className={`navigation-link ${activeLink === 'page4' ? 'zoom-out' : ''} exclusiva-link`} onClick={() => handleClick('page4')}>
             <div className="image-hover-container">
-              <img src={ventana} alt="Zona Exclusiva" />
-              <span className="hover-text">Zona Exclusiva</span>
+              <img src={marco2} alt="Zona Exclusiva" />
+              <span className="hover-text">Zona+18</span>
             </div>
           </Link>
-          <Link to="#" className={`navigation-link ${activeLink === 'salida' ? 'zoom-out' : ''} exclusiva-link salida-custom-position`} onClick={() => handleClick('salida')}>
+          <Link to="#" className={`navigation-link ${activeLink === 'salida' ? 'zoom-out' : ''} exclusiva-link salida-custom-position`} onClick={() => handleClick('salida')}>Salida
             <div className="image-hover-container">
-              <img src={salida} alt="Salida" />
-              <span className="hover-text">Salida</span>
             </div>
-         </Link>
+          </Link>
         </div>
       )}
     </div>
@@ -94,5 +92,4 @@ const MainContent = () => {
 };
 
 export default MainContent;
-
 
