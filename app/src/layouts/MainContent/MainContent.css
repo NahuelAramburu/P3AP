@@ -21,12 +21,10 @@
 
 .navigation-links-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, auto); 
-  gap: 20px; 
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: auto;
   justify-items: center;
-  width: 30%;
-  padding-bottom: 190px;
+  padding-bottom: 320px;
 }
 
 .navigation-link.salida-custom-position {
@@ -40,77 +38,68 @@
 }
 
 .navigation-link {
-  padding: 10px 20px;
+  padding: 10px 0px;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: var(--color-cream);
+
+}
+
+.navigation-link.salida-custom-position {
+  grid-column: 1 / -1; 
+  position: relative;
+  top: 100px;
+  color: transparent; 
+  cursor: pointer; 
+}
+
+.navigation-link.salida-custom-position:hover {
+  color: transparent; 
 }
 
 .navigation-link:hover {
-  color: #EFEFEF; 
+  color: var(--color-gold); 
   transform: scale(1.05); 
   transition: all 0.3s ease;
 }
 
-
 .navigation-link img {
-  width: 200px; 
+  width: 150px; 
   height: auto; 
 }
 
+.image-hover-container {
+  position: relative;
+  display: inline-block;
+}
+
+.image-hover-container img {
+  transition: transform 0.2s ease;
+}
+
+.image-hover-container:hover img {
+  transform: scale(1);
+}
+
+.hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-cream);
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 2px 2px 4px var(--color-dark);
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
 
 .image-hover-container:hover .hover-text {
   visibility: visible;
   opacity: 1;
 }
 
-.navigation-links-container {
-  position: relative;
-}
-
-.salida-custom-position {
-  position: absolute;
-  top: 80px; 
-  right: 200px; 
-  bottom: auto; 
-}
-
-@media (max-width: 768px) {
-  .main-content {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-  }
-
-  .navigation-links-container {
-    position: relative; 
-    width: 80%;
-    padding: 20px 0;
-    text-align: center;
-    grid-template-columns: 1fr; 
-    grid-template-rows: repeat(5, auto);
-    gap: 20px; 
-  }
-  .navigation-link {
-    padding: 20px 30px;
-    text-decoration: none;
-    font-size: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    position: relative;
-    transform: none; 
-  }
-
-  
-  .navigation-link img {
-    width: 118px;
-    height: auto;
-  }
-}

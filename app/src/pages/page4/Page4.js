@@ -19,7 +19,8 @@ const Page4 = () => {
   };
 
   return (
-    <div className="page-content" style={{ backgroundImage: `url(${Page4Image})`, backgroundPosition: 'center' }}>
+    <div className="page-content">
+      <div className={`background-image ${ageVerified ? '' : 'blurred'}`} style={{ backgroundImage: `url(${Page4Image})` }}></div>
       {!ageVerified && (
         <div className="age-verification">
           {showAgeWarning && <p className="warning">Contenido no apto para menores de 18 años</p>}
