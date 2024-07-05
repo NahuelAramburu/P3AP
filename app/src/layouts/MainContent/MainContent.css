@@ -1,0 +1,116 @@
+:root {
+  --color-dark: #170e08;
+  --color-brown: #524335;
+  --color-gold: #ddb669;
+  --color-cream: #f6f1d8;
+}
+
+.main-content {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  overflow-x: hidden; 
+  overflow-y: hidden; 
+}
+
+.navigation-links-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, auto); 
+  gap: 20px; 
+  justify-items: center;
+  width: 30%;
+  padding-bottom: 190px;
+}
+
+.navigation-link.salida-custom-position {
+  grid-row: 3; 
+  grid-column: 1 / span 2; 
+  justify-self: center; 
+  position: relative; 
+  top: 0; 
+  right: 0;
+  bottom: 0; 
+}
+
+.navigation-link {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.navigation-link:hover {
+  color: #EFEFEF; 
+  transform: scale(1.05); 
+  transition: all 0.3s ease;
+}
+
+
+.navigation-link img {
+  width: 200px; 
+  height: auto; 
+}
+
+
+.image-hover-container:hover .hover-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.navigation-links-container {
+  position: relative;
+}
+
+.salida-custom-position {
+  position: absolute;
+  top: 80px; 
+  right: 200px; 
+  bottom: auto; 
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .navigation-links-container {
+    position: relative; 
+    width: 80%;
+    padding: 20px 0;
+    text-align: center;
+    grid-template-columns: 1fr; 
+    grid-template-rows: repeat(5, auto);
+    gap: 20px; 
+  }
+  .navigation-link {
+    padding: 20px 30px;
+    text-decoration: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    transform: none; 
+  }
+
+  
+  .navigation-link img {
+    width: 118px;
+    height: auto;
+  }
+}
