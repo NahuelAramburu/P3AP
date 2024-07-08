@@ -95,14 +95,6 @@ const Carousel = () => {
           <p>Acción no permitida</p>
           <button onClick={() => setPopupVisible(false)}>Cerrar</button>
         </div>
-
-        
-      )}
-      {modalVisible && (
-        <div className="modal">
-          <span className="close-modal" onClick={() => setModalVisible(false)}>&times;</span>
-          <img src={currentImage} alt="Ampliada" className="modal-content" />
-        </div>
       )}
       {modalVisible && (
         <div className="modal">

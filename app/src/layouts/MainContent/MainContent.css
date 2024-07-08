@@ -27,16 +27,6 @@
   padding-bottom: 320px;
 }
 
-.navigation-link.salida-custom-position {
-  grid-row: 3; 
-  grid-column: 1 / span 2; 
-  justify-self: center; 
-  position: relative; 
-  top: 0; 
-  right: 0;
-  bottom: 0; 
-}
-
 .navigation-link {
   padding: 10px 0px;
   text-decoration: none;
