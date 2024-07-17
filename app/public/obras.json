@@ -43,6 +43,110 @@
         "alt": "Obra de arte 4",
         "nombre": "Nombre 4",
         "pais": "País 4",
+        "tematica": "Temática 1",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img5.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
+        "tematica": "Temática 4",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img6.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
+        "tematica": "Temática 4",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img7.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
+        "tematica": "Temática 4",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img7.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
+        "tematica": "Temática 4",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img7.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
+        "tematica": "Temática 3",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img7.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
+        "tematica": "Temática 4",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img7.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
+        "tematica": "Temática 4",
+        "tecnica": "Técnica 4",
+        "soportes": "Soporte 4",
+        "medidas": "Medidas 4",
+        "enArtelistaDesde": "Fecha 4",
+        "descripcion": "Descripción 4",
+        "precio": "Precio 4"
+      },
+      {
+        "src": "/obras/img7.jpg",
+        "alt": "Obra de arte 4",
+        "nombre": "Nombre 4",
+        "pais": "País 4",
         "tematica": "Temática 4",
         "tecnica": "Técnica 4",
         "soportes": "Soporte 4",
@@ -51,5 +155,6 @@
         "descripcion": "Descripción 4",
         "precio": "Precio 4"
       }
+
   ]
   

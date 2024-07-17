@@ -33,6 +33,7 @@ const Gallery = () => {
     setCurrentCategory(category);
   };
 
+
   const openModal = (imageUrl) => {
     setCurrentImage(imageUrl);
     setModalVisible(true);
@@ -45,6 +46,7 @@ const Gallery = () => {
         <button onClick={() => filterItems('Temática 1')} className={currentCategory === 'Temática 1' ? 'active' : ''}>Categoría 1</button>
         <button onClick={() => filterItems('Temática 2')} className={currentCategory === 'Temática 2' ? 'active' : ''}>Categoría 2</button>
         <button onClick={() => filterItems('Temática 3')} className={currentCategory === 'Temática 3' ? 'active' : ''}>Categoría 3</button>
+        <button onClick={() => filterItems('Temática 4')} className={currentCategory === 'Temática 4' ? 'active' : ''}>Categoría 4</button>
       </div>
       <div className="gallery">
         {filteredItems.map((item, index) => (
