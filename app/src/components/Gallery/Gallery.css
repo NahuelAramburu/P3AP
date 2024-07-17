@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap");
+
+:root {
+  --color-dark: #170e08;
+  --color-brown: #524335;
+  --color-gold: #ddb669;
+  --color-cream: #f6f1d8;
+}
+
+body {
+  font-family: "MedievalSharp", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.content-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  z-index: -2;
+}
+
+.cartel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: auto;
+  z-index: 2; 
+}
+
+.gallery-container {
+  text-align: center;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.filter-buttons button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.filter-buttons .active {
+  background-color: #333;
+  color: white;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.gallery-item {
+  margin: 10px;
+  cursor: pointer;
+  text-align: center;
+  width: 300px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.card-content h3 {
+  margin: 0 0 10px 0;
+}
+
+.card-content p {
+  margin: 5px 0;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1001;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: var(--color-cream);
+  font-size: 60px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 45%; 
+  }
+  .card-content h3, .card-content p {
+    font-size: 1.2em; 
+  }
+}
+
+@media (max-width: 576px) {
+  .gallery {
+    flex-direction: column;
+    align-items: center;
+  }
+  .gallery-item {
+    width: 90%; 
+  }
+  .card img {
+    height: auto; 
+  }
+  .filter-buttons button {
+    padding: 12px 24px; 
+    font-size: 1.1em;
+  }
+}
+
