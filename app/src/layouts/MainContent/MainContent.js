@@ -31,10 +31,10 @@ const MainContent = () => {
   }, [isDoorVisible, isContentVisible]);
 
   useEffect(() => {
-    // if (location.pathname === '/') {
-    //   setIsDoorVisible(false);
-    //   setIsContentVisible(true);
-    // }
+    if (location.pathname === '/') {
+      setIsDoorVisible(false);
+      setIsContentVisible(true);
+    }
   }, [location.pathname]);
 
   const handleDoorClose = () => {
