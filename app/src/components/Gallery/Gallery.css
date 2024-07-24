@@ -25,10 +25,7 @@ body {
   background-size: cover;
   background-position: center;
   overflow: hidden;
-  
 }
-
-
 
 .background-container {
   position: absolute;
@@ -51,22 +48,11 @@ body {
 
 button {
   font-family: "MedievalSharp", sans-serif;
-  background-color: var(--color-dark);
-  color: var(--color-cream);
-  border: 2px solid var(--color-gold);
-  border-radius: 4px;
-  padding: 10px 20px;
-  cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 button:hover {
   background-color: var(--color-dark);
   color: var(--color-gold);
-}
-
-button:active {
-  transform: scale(0.98); 
 }
 
 .gallery-container {
@@ -90,24 +76,10 @@ button:active {
   font-size: 20px;
 }
 
-
 .filter-buttons .active {
   background-color: var(--color-brown);
   color: var(--color-gold);
   border: 2px solid var(--color-cream);
-}
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gallery-item {
-  margin: 10px;
-  cursor: pointer;
-  text-align: center;
-  width: calc(20% - 5px); 
-  box-sizing: border-box;
 }
 
 .card {

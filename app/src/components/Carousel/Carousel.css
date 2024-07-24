@@ -22,7 +22,6 @@ body {
 
 .art-description {
   max-width: 450px;
-  margin-left: 120px;
   color: var(--color-cream);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   position: relative;
@@ -46,8 +45,6 @@ body {
   max-width: 600px;
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
 
@@ -59,7 +56,6 @@ body {
 
 .slide.active {
   display: block;
-  animation: slide-in 0.5s ease-in-out forwards;
 }
 
 @keyframes slide-in {
@@ -83,9 +79,7 @@ body {
   max-width: 400px;
   height: auto;
   border-radius: 10px;
-  cursor: pointer;
 }
-
 
 .left-arrow,
 .right-arrow {
@@ -97,7 +91,6 @@ body {
   padding: 10px;
   z-index: 10;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0);
   color: var(--color-gold);
   font-size: 45px;
   transition: background-color 0.3s ease, transform 0.3s ease;
@@ -106,14 +99,6 @@ body {
 .left-arrow:hover,
 .right-arrow:hover {
   transform: translateY(-50%) scale(1.1);
-}
-
-.left-arrow {
-  left: 400px;
-}
-
-.right-arrow {
-  right: 400px;
 }
 
 @keyframes fade-in {

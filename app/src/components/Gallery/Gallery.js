@@ -33,7 +33,6 @@ const Gallery = () => {
     setCurrentCategory(category);
   };
 
-
   const openModal = (imageUrl) => {
     setCurrentImage(imageUrl);
     setModalVisible(true);

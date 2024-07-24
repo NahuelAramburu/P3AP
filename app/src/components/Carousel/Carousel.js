@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import './Carousel.css';
 
 const Carousel = () => {
   const [obras, setObras] = useState([]);
   const [current, setCurrent] = useState(0);
-  const [popupVisible, setPopupVisible] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [currentImage, setCurrentImage] = useState('');
 
@@ -48,8 +46,6 @@ const Carousel = () => {
       setPopupVisible(true);
     };
 
-    document.addEventListener('visibilitychange', handleVisibilityChange);
-    document.addEventListener('contextmenu', handleContextMenu);
 
     return () => {
       document.removeEventListener('visibilitychange', handleVisibilityChange);
@@ -89,12 +85,6 @@ const Carousel = () => {
             <FaArrowAltCircleRight />
           </button>
         </>
-      )}
-      {popupVisible && (
-        <div className="popup">
-          <p>Acción no permitida</p>
-          <button onClick={() => setPopupVisible(false)}>Cerrar</button>
-        </div>
       )}
       {modalVisible && (
         <div className="modal">
