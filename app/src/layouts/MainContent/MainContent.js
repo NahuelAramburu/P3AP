@@ -1,41 +1,29 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CastleImage from '../../assets/images/castle2.png';
 import Door from '../../components/Door/Door';
-import marco1 from '../../assets/images/1.png';
-import marco2 from '../../assets/images/3.png';
 import './MainContent.css';
+import cartel from '../../assets/images/back.png';
 
 const MainContent = () => {
   const [isDoorVisible, setIsDoorVisible] = useState(() => {
-    const savedState = localStorage.getItem('isDoorVisible');
-    return savedState !== null ? JSON.parse(savedState) : true;
+    const doorState = sessionStorage.getItem('isDoorVisible');
+    return doorState === null || doorState === 'true';
   });
+  const [isContentVisible, setIsContentVisible] = useState(false);
   const [activeLink, setActiveLink] = useState('');
-  const [isContentVisible, setIsContentVisible] = useState(() => {
-    const savedState = localStorage.getItem('isContentVisible');
-    return savedState !== null ? JSON.parse(savedState) : false;
-  });
 
-  const location = useLocation();
+  useEffect(() => {
+    if (isDoorVisible) {
+      sessionStorage.setItem('isDoorVisible', 'false');
+    }
+  }, [isDoorVisible]);
 
   useEffect(() => {
     if (!isDoorVisible) {
       setTimeout(() => setIsContentVisible(true), 1000);
     }
   }, [isDoorVisible]);
-
-  useEffect(() => {
-    localStorage.setItem('isDoorVisible', isDoorVisible);
-    localStorage.setItem('isContentVisible', isContentVisible);
-  }, [isDoorVisible, isContentVisible]);
-
-  useEffect(() => {
-    if (location.pathname === '/') {
-      setIsDoorVisible(false);
-      setIsContentVisible(true);
-    }
-  }, [location.pathname]);
 
   const handleDoorClose = () => {
     setIsDoorVisible(false);
@@ -45,47 +33,47 @@ const MainContent = () => {
     if (linkName === 'salida') {
       setIsDoorVisible(true);
       setIsContentVisible(false);
+      sessionStorage.setItem('isDoorVisible', 'true');
     } else {
       setActiveLink(linkName);
       setTimeout(() => setActiveLink(''), 2000);
     }
   };
 
+  const handleCartelClick = () => {
+    setIsDoorVisible(true);
+    setIsContentVisible(false);
+    sessionStorage.setItem('isDoorVisible', 'true');
+  };
+
   return (
-    <div className="main-content" style={{ backgroundImage: `url(${CastleImage})`, backgroundPosition: 'center' }}>
+    <div className="main-content">
+      <img src={CastleImage} alt="Castle Background" className="background-image" />
       {isDoorVisible ? (
         <Door onClose={handleDoorClose} />
       ) : (
-        <div className={`navigation-links-container ${isContentVisible ? 'visible' : ''}`}>
-          <Link to="/page1" className={`navigation-link ${activeLink === 'page1' ? 'zoom-out' : ''}`} onClick={() => handleClick('page1')}>
-            <div className="image-hover-container">
-              <img src={marco1} alt="Artista" />
-              <span className="hover-text">Artista</span>
-            </div>
-          </Link>
-          <Link to="/page2" className={`navigation-link ${activeLink === 'page2' ? 'zoom-out' : ''}`} onClick={() => handleClick('page2')}>
-            <div className="image-hover-container">
-              <img src={marco1} alt="Historia" />
-              <span className="hover-text">Historia</span>
-            </div>
-          </Link>
-          <Link to="/page3" className={`navigation-link ${activeLink === 'page3' ? 'zoom-out' : ''} obras-link`} onClick={() => handleClick('page3')}>
-            <div className="image-hover-container">
-              <img src={marco2} alt="Obras" />
-              <span className="hover-text">Obras</span>
-            </div>
-          </Link>
-          <Link to="/page4" className={`navigation-link ${activeLink === 'page4' ? 'zoom-out' : ''} exclusiva-link`} onClick={() => handleClick('page4')}>
-            <div className="image-hover-container">
-              <img src={marco2} alt="Zona Exclusiva" />
-              <span className="hover-text">Zona+18</span>
-            </div>
-          </Link>
-          <Link to="#" className={`navigation-link ${activeLink === 'salida' ? 'zoom-out' : ''} exclusiva-link salida-custom-position`} onClick={() => handleClick('salida')}>Salida
-            <div className="image-hover-container">
-            </div>
-          </Link>
-        </div>
+        <>
+          <h1 className="title">Leonardo Vladimir</h1>
+          <h2>Artista Plástico</h2>
+          <h3>Autor libre y creativo</h3>
+          <div className={`navigation-links-container ${isContentVisible ? 'visible' : ''}`}>
+            <Link to="/page1" className={`navigation-link ${activeLink === 'page1' ? 'zoom-out' : ''}`} onClick={() => handleClick('page1')}>
+              Artista
+            </Link>
+            <Link to="/page2" className={`navigation-link ${activeLink === 'page2' ? 'zoom-out' : ''}`} onClick={() => handleClick('page2')}>
+              Historia
+            </Link>
+            <Link to="/page3" className={`navigation-link ${activeLink === 'page3' ? 'zoom-out' : ''} obras-link`} onClick={() => handleClick('page3')}>
+              Obras
+            </Link>
+            <Link to="/page4" className={`navigation-link ${activeLink === 'page4' ? 'zoom-out' : ''} exclusiva-link`} onClick={() => handleClick('page4')}>
+              Zona Exclusiva
+            </Link>
+            <Link to="#" onClick={handleCartelClick}>
+              <img src={cartel} className="cartel-image" alt="Cartel" />
+            </Link>
+          </div>
+        </>
       )}
     </div>
   );
