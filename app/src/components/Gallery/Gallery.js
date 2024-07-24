@@ -21,6 +21,27 @@ const Gallery = () => {
     };
 
     fetchObras();
+
+    const preventContextMenu = (event) => {
+      event.preventDefault();
+      const warningPopup = document.createElement('div');
+      warningPopup.textContent = 'Acción no permitida';
+      warningPopup.className = 'gallery-context-menu-warning'; 
+      document.body.appendChild(warningPopup);
+    
+      warningPopup.style.top = `${event.pageY}px`;
+      warningPopup.style.left = `${event.pageX}px`;
+    
+      setTimeout(() => {
+        warningPopup.remove();
+      }, 1000);
+    };
+    
+    document.addEventListener('contextmenu', preventContextMenu);
+
+    return () => {
+      document.removeEventListener('contextmenu', preventContextMenu);
+    };
   }, []);
 
   const filterItems = (category) => {
@@ -39,20 +60,20 @@ const Gallery = () => {
   };
 
   return (
-    <div className="gallery-container">
-      <div className="filter-buttons">
-        <button onClick={() => filterItems('All')} className={currentCategory === 'All' ? 'active' : ''}>Todo</button>
-        <button onClick={() => filterItems('Temática 1')} className={currentCategory === 'Temática 1' ? 'active' : ''}>Categoría 1</button>
-        <button onClick={() => filterItems('Temática 2')} className={currentCategory === 'Temática 2' ? 'active' : ''}>Categoría 2</button>
-        <button onClick={() => filterItems('Temática 3')} className={currentCategory === 'Temática 3' ? 'active' : ''}>Categoría 3</button>
-        <button onClick={() => filterItems('Temática 4')} className={currentCategory === 'Temática 4' ? 'active' : ''}>Categoría 4</button>
+    <div className="gallery-gallery-container">
+      <div className="gallery-filter-buttons">
+        <button onClick={() => filterItems('All')} className={currentCategory === 'All' ? 'gallery-active' : ''}>Todo</button>
+        <button onClick={() => filterItems('Temática 1')} className={currentCategory === 'Temática 1' ? 'gallery-active' : ''}>Categoría 1</button>
+        <button onClick={() => filterItems('Temática 2')} className={currentCategory === 'Temática 2' ? 'gallery-active' : ''}>Categoría 2</button>
+        <button onClick={() => filterItems('Temática 3')} className={currentCategory === 'Temática 3' ? 'gallery-active' : ''}>Categoría 3</button>
+        <button onClick={() => filterItems('Temática 4')} className={currentCategory === 'Temática 4' ? 'gallery-active' : ''}>Categoría 4</button>
       </div>
-      <div className="gallery">
+      <div className="gallery-gallery">
         {filteredItems.map((item, index) => (
-          <div key={index} className="gallery-item" onClick={() => openModal(item.src)}>
-            <div className="card">
+          <div key={index} className="gallery-gallery-item" onClick={() => openModal(item.src)}>
+            <div className="gallery-card">
               <img src={item.src} alt={item.alt} />
-              <div className="card-content">
+              <div className="gallery-card-content">
                 <h3>{item.nombre}</h3>
                 <p><strong>País:</strong> {item.pais}</p>
                 <p><strong>Técnica:</strong> {item.tecnica}</p>
@@ -68,9 +89,9 @@ const Gallery = () => {
       </div>
 
       {modalVisible && (
-        <div className="modal">
-          <span className="close-modal" onClick={() => setModalVisible(false)}>&times;</span>
-          <img src={currentImage} alt="Ampliada" className="modal-content" />
+        <div className="gallery-modal">
+          <span className="gallery-close-modal" onClick={() => setModalVisible(false)}>&times;</span>
+          <img src={currentImage} alt="Ampliada" className="gallery-modal-content" />
         </div>
       )}
     </div>
