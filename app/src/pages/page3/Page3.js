@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import cartel from '../../assets/images/back.png';
 import './Page3.css';
 import Gallery from '../../components/Gallery/Gallery';
-// import Carousel from '../../components/Carousel/Carousel';
 
 const Page3 = () => {
   return (
