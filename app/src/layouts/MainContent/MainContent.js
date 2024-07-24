@@ -1,16 +1,23 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import CastleImage from '../../assets/images/castle2.png';
 import Door from '../../components/Door/Door';
 import './MainContent.css';
 import cartel from '../../assets/images/back.png';
 
 const MainContent = () => {
-  const [isDoorVisible, setIsDoorVisible] = useState(true);
-  const [activeLink, setActiveLink] = useState('');
+  const [isDoorVisible, setIsDoorVisible] = useState(() => {
+    const doorState = sessionStorage.getItem('isDoorVisible');
+    return doorState === null || doorState === 'true';
+  });
   const [isContentVisible, setIsContentVisible] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
-  const location = useLocation();
+  useEffect(() => {
+    if (isDoorVisible) {
+      sessionStorage.setItem('isDoorVisible', 'false');
+    }
+  }, [isDoorVisible]);
 
   useEffect(() => {
     if (!isDoorVisible) {
@@ -26,6 +33,7 @@ const MainContent = () => {
     if (linkName === 'salida') {
       setIsDoorVisible(true);
       setIsContentVisible(false);
+      sessionStorage.setItem('isDoorVisible', 'true');
     } else {
       setActiveLink(linkName);
       setTimeout(() => setActiveLink(''), 2000);
@@ -35,6 +43,7 @@ const MainContent = () => {
   const handleCartelClick = () => {
     setIsDoorVisible(true);
     setIsContentVisible(false);
+    sessionStorage.setItem('isDoorVisible', 'true');
   };
 
   return (
