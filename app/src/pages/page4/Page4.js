@@ -8,6 +8,7 @@ import Carousel from '../../components/Carousel/Carousel';
 const Page4 = () => {
   const [ageVerified, setAgeVerified] = useState(false);
   const [showAgeWarning, setShowAgeWarning] = useState(false);
+  const [ageCheckDone, setAgeCheckDone] = useState(false);
 
   const verifyAge = () => {
     const age = prompt('Por favor, ingresa tu edad:');
@@ -16,6 +17,7 @@ const Page4 = () => {
     } else {
       setShowAgeWarning(true);
     }
+    setAgeCheckDone(true);
   };
 
   return (
@@ -24,7 +26,13 @@ const Page4 = () => {
       {!ageVerified && (
         <div className="age-verification">
           {showAgeWarning && <p className="warning">Contenido no apto para menores de 18 años</p>}
-          <button onClick={verifyAge}>Verificar Edad</button>
+          {!ageCheckDone ? (
+            <button onClick={verifyAge}>Verificar Edad</button>
+          ) : (
+            <Link to="/">
+              <button>Volver al Inicio</button>
+            </Link>
+          )}
         </div>
       )}
       {ageVerified && <Carousel />}
