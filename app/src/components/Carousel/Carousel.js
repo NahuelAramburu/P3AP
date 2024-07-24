@@ -35,61 +35,67 @@ const Carousel = () => {
   };
 
   useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        setPopupVisible(true);
-      }
+    const preventContextMenu = (event) => {
+      event.preventDefault();
+      const warningPopup = document.createElement('div');
+      warningPopup.textContent = 'Acción no permitida';
+      warningPopup.className = 'carousel-context-menu-warning'; 
+      document.body.appendChild(warningPopup);
+
+      warningPopup.style.top = `${event.pageY}px`;
+      warningPopup.style.left = `${event.pageX}px`;
+
+      setTimeout(() => {
+        warningPopup.remove();
+      }, 1000);
     };
 
-    const handleContextMenu = (e) => {
-      e.preventDefault();
-      setPopupVisible(true);
-    };
-
+    document.addEventListener('contextmenu', preventContextMenu);
 
     return () => {
-      document.removeEventListener('visibilitychange', handleVisibilityChange);
-      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('contextmenu', preventContextMenu);
     };
   }, []);
 
   return (
-    <div className="carousel">
+    <div className="carousel-container">
       {obras.length > 0 && (
         <>
-          <div className="art-description">
-            <h2>{obras[current].nombre}</h2>
-            <p><strong>País:</strong> {obras[current].pais}</p>
-            <p><strong>Temática:</strong> {obras[current].tematica}</p>
-            <p><strong>Técnica y soportes:</strong> {obras[current].tecnica}, {obras[current].soportes}</p>
-            <p><strong>Medidas:</strong> {obras[current].medidas}</p>
-            <p><strong>En Artelista desde:</strong> {obras[current].enArtelistaDesde}</p>
-            <p><strong>Descripción:</strong> {obras[current].descripcion}</p>
-            <p><strong>Precio: $</strong>{obras[current].precio}</p>
+          <div className="carousel-card">
+            <div className="carousel-art-description">
+              <h2>{obras[current].nombre}</h2>
+              <p><strong>País:</strong> {obras[current].pais}</p>
+              <p><strong>Temática:</strong> {obras[current].tematica}</p>
+              <p><strong>Técnica y soportes:</strong> {obras[current].tecnica}, {obras[current].soportes}</p>
+              <p><strong>Medidas:</strong> {obras[current].medidas}</p>
+              <p><strong>En Artelista desde:</strong> {obras[current].enArtelistaDesde}</p>
+              <p><strong>Descripción:</strong> {obras[current].descripcion}</p>
+              <p><strong>Precio: $</strong>{obras[current].precio}</p>
+            </div>
+            <div className="carousel-slider">
+              {obras.map((art, index) => (
+                <div className={index === current ? 'carousel-slide active' : 'carousel-slide'} key={index}>
+                  {index === current && (
+                    <div className="carousel-image-container" onClick={() => openModal(art.src)}>
+                      <img src={art.src} alt={art.alt} className="carousel-image" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="slider">
-            {obras.map((art, index) => (
-              <div className={index === current ? 'slide active' : 'slide'} key={index}>
-                {index === current && (
-                  <div className="image-container" onClick={() => openModal(art.src)}>
-                    <img src={art.src} alt={art.alt} className="image" />
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-          <button className="left-arrow" onClick={prevSlide}>
-            <FaArrowAltCircleLeft />
+          <button className="carousel-left-arrow" onClick={prevSlide}>
+            &lt;
           </button>
-          <button className="right-arrow" onClick={nextSlide}>
-            <FaArrowAltCircleRight />
+          <button className="carousel-right-arrow" onClick={nextSlide}>
+            &gt;
           </button>
         </>
       )}
       {modalVisible && (
-        <div className="modal">
-          <span className="close-modal" onClick={() => setModalVisible(false)}>&times;</span>
-          <img src={currentImage} alt="Ampliada" className="modal-content" />
+        <div className="carousel-modal">
+          <span className="carousel-close-modal" onClick={() => setModalVisible(false)}>&times;</span>
+          <img src={currentImage} alt="Ampliada" className="carousel-modal-content" />
         </div>
       )}
     </div>
